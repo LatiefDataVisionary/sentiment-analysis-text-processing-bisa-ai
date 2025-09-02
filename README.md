@@ -1,67 +1,82 @@
-# Sentiment Analysis with Basic Text Processing
+# Sentiment Analysis with Foundational Text Processing
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python: 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Framework: Pandas](https://img.shields.io/badge/pandas-2.0-blue)](https://pandas.pydata.org/)
-[![Framework: NLTK](https://img.shields.io/badge/nltk-3.8-blue)](https://www.nltk.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python Version: 3.x](https://img.shields.io/badge/Python-3.x-brightgreen.svg)](https://www.python.org/)
+[![Technologies: Pandas | NLTK | Seaborn](https://img.shields.io/badge/Technologies-Pandas%20%7C%20NLTK%20%7C%20Seaborn-ff69b4)](https://github.com/)
 
-A comprehensive project focused on the fundamentals of Natural Language Processing (NLP). This repository contains the final project for the **Basic Text Processing** course from Bisa AI, where raw text data from multiple sources is cleaned, processed, and prepared for sentiment analysis.
+![Project Banner](https://user-images.githubusercontent.com/7065401/52227183-6ce80000-28a1-11e9-9154-106d87175443.png)
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Dataset](#dataset)
-- [Repository Structure](#repository-structure)
-- [Methodology](#methodology)
-- [Installation and Setup](#installation-and-setup)
-- [Results](#results)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+This repository contains the final assignment for the **Basic Text Processing** course from **Bisa AI**. It is a comprehensive demonstration of a foundational Natural Language Processing (NLP) pipeline, where raw text data from three distinct sources is meticulously cleaned, processed, and prepared for a sentiment analysis task.
 
-## Project Overview
+## 📋 Table of Contents
+- [Project Overview](#-project-overview)
+- [Dataset](#-dataset)
+- [Methodology](#-methodology)
+- [Key Findings & Results](#-key-findings--results)
+- [Installation and Setup](#-installation-and-setup)
+- [Repository Structure](#-repository-structure)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
-This project demonstrates a fundamental NLP pipeline using a sentiment-labelled dataset. The primary goal is to apply various text processing techniques to transform raw, unstructured text into a clean, structured format suitable for machine learning tasks. The project covers data loading, exploration, cleaning, and several core preprocessing steps.
+## 🚀 Project Overview
 
-The key text processing techniques applied are:
-*   **Case Folding:** Converting all text to a uniform case (lowercase) to ensure consistency.
-*   **Punctuation & Number Removal:** Eliminating characters that do not carry sentiment information.
-*   **Filtering (Stopword Removal):** Removing common words (e.g., "the", "a", "is") that provide little value in sentiment prediction.
-*   **Tokenizing:** Breaking down sentences into individual words or tokens.
-*   **Stemming:** Reducing words to their root form to consolidate variations of a word.
+The primary goal of this project is to apply a systematic text preprocessing workflow to a sentiment-labelled dataset. This process is crucial for transforming noisy, unstructured text into a clean, standardized format, making it suitable for feature extraction and machine learning modeling.
 
-## Dataset
-The project utilizes the "Sentiment Labelled Sentences Data Set" from Kaggle. This dataset contains sentences sourced from three different domains:
-*   **IMDb:** Movie reviews
-*   **Amazon:** Product reviews
-*   **Yelp:** Restaurant reviews
+The core text processing techniques implemented include:
+*   **Case Folding:** Standardizing text to lowercase to ensure consistency.
+*   **Noise Removal:** Eliminating punctuation, numbers, and special characters.
+*   **Filtering (Stopword Removal):** Removing common, low-value words to focus on meaningful terms.
+*   **Tokenization:** Breaking down sentences into individual words (tokens).
+*   **Stemming:** Reducing words to their root form (e.g., *loved* → *love*) using the Porter Stemmer algorithm.
 
-Each sentence is labelled with a binary sentiment score: `1` for positive and `0` for negative. The data can be found and downloaded from the following link:
-[**Kaggle Dataset: Sentiment Labelled Sentences**](https://www.kaggle.com/datasets/marklvl/sentiment-labelled-sentences-data-set/data)
+## 📊 Dataset
 
-## Repository Structure
-```
-sentiment-analysis-text-processing/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-│   └── 1.0-data-preprocessing-and-eda.ipynb
-└── src/
-    └── utils/
-```
+The project utilizes the **"Sentiment Labelled Sentences Data Set"** from Kaggle, which contains 2,748 sentences sourced from three distinct online platforms:
+*   **IMDb.com:** Movie reviews
+*   **Amazon.com:** Product reviews for mobile phones
+*   **Yelp.com:** Restaurant reviews
 
-## Methodology
+Each sentence in the dataset is annotated with a binary sentiment label: `1` for a positive review and `0` for a negative one.
 
-1.  **Data Loading:** The three raw data files (`imdb`, `amazon`, `yelp`) are loaded into Pandas DataFrames.
-2.  **Exploratory Data Analysis (EDA):** Initial analysis is performed to understand the structure, class distribution, and characteristics of the data.
-3.  **Data Merging:** The three individual datasets are combined into a single, master DataFrame for unified processing.
-4.  **Text Preprocessing Pipeline:** A series of sequential cleaning steps are applied to the text data as outlined in the [Project Overview](#project-overview).
-5.  **Final Data Export:** The fully cleaned and processed data is saved to the `data/processed/` directory for future use.
+[**➡️ Download the Dataset Here**](https://www.kaggle.com/datasets/marklvl/sentiment-labelled-sentences-data-set/data)
 
-## Installation and Setup
+## 🔬 Methodology
+
+The project follows a structured NLP pipeline, implemented within a single Google Colab notebook:
+
+1.  **Data Acquisition & Consolidation:** The three separate data files were downloaded, loaded into Pandas DataFrames, and merged into a single, unified dataset.
+2.  **Exploratory Data Analysis (EDA):** A thorough analysis was conducted to understand the dataset's characteristics, including its size, structure, and the balance of sentiment classes.
+3.  **Data Quality Assessment:** The dataset was checked for missing values and duplicate entries. Duplicates were identified and subsequently removed.
+4.  **Sequential Text Preprocessing:** A five-step text cleaning pipeline was applied to each sentence to prepare it for analysis.
+5.  **Data Export:** The final, cleaned dataset was exported to a new CSV file (`sentiment_labelled_sentences_cleaned.csv`), ready for downstream tasks.
+
+## ✨ Key Findings & Results
+
+### Exploratory Data Analysis
+- The consolidated dataset consists of **2,748 rows** and 2 columns (`sentence`, `sentiment`).
+- Initial checks found and removed **17 duplicate entries**, resulting in a final dataset of **2,731 unique sentences**.
+- The sentiment classes are highly balanced, with **50.4% Positive** and **49.6% Negative** reviews, which is ideal for a classification task.
+
+<p align="center">
+  <img src="https://i.imgur.com/2U54cIu.png" alt="Sentiment Distribution" width="500">
+</p>
+
+### The Impact of Text Preprocessing
+
+The text processing pipeline significantly transformed the raw sentences into a clean and standardized format. The following table showcases a "before-and-after" comparison for a sample sentence:
+
+| Processing Stage       | Result                                                                     |
+| ---------------------- | -------------------------------------------------------------------------- |
+| **Original Sentence**  | *"Wow... Loved this place."*                                                |
+| **1. Case Folding**    | *"wow... loved this place."*                                                |
+| **2. Noise Removal**   | *"wow loved this place"*                                                   |
+| **3. Stopword Removal**| *"wow loved place"*  *(No stopwords to remove in this example)*             |
+| **4. Tokenization**    | `['wow', 'loved', 'place']`                                                |
+| **5. Stemming**        | `['wow', 'love', 'place']`                                                 |
+
+This demonstrates how the text is stripped of non-essential information and standardized, resulting in clean tokens ready for machine learning.
+
+## 🛠️ Installation and Setup
 
 To run this project locally, please follow these steps:
 
@@ -88,12 +103,26 @@ To run this project locally, please follow these steps:
     ```
     Then, navigate to `notebooks/` and open `1.0-data-preprocessing-and-eda.ipynb`.
 
-## Results
-*(This section will be updated with key findings from the notebook, such as before-and-after examples of text, data distributions, and final dataset statistics.)*
+## 📂 Repository Structure
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
+sentiment-analysis-text-processing/
+├── .gitignore                # Specifies files for Git to ignore
+├── LICENSE                   # Project's open-source license
+├── README.md                 # This file
+├── requirements.txt          # Project dependencies
+├── data/
+│   ├── raw/                  # Original, untouched data
+│   └── processed/            # Final cleaned dataset
+└── notebooks/
+    └── notebook.ipynb  # The main project notebook with all steps
+```
 
-## Acknowledgements
+## 📜 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 🙏 Acknowledgements
 *   The dataset was created by Kotzias et. al. for their paper "From Group to Individual Labels using Deep Features".
 *   This project was completed as part of the **Basic Text Processing** course offered by **Bisa AI**.
+
+---
