@@ -57,9 +57,7 @@ The project follows a structured NLP pipeline, implemented within a single Googl
 - Initial checks found and removed **17 duplicate entries**, resulting in a final dataset of **2,731 unique sentences**.
 - The sentiment classes are highly balanced, with **50.4% Positive** and **49.6% Negative** reviews, which is ideal for a classification task.
 
-<p align="center">
-  <img src="https://i.imgur.com/2U54cIu.png" alt="Sentiment Distribution" width="500">
-</p>
+![Project Banner](https://user-images.githubusercontent.com/7065401/52227183-6ce80000-28a1-11e9-9154-106d87175443.png)
 
 ### The Impact of Text Preprocessing
 
