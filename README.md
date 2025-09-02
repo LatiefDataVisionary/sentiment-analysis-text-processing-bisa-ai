@@ -4,7 +4,7 @@
 [![Python Version: 3.x](https://img.shields.io/badge/Python-3.x-brightgreen.svg)](https://www.python.org/)
 [![Technologies: Pandas | NLTK | Seaborn](https://img.shields.io/badge/Technologies-Pandas%20%7C%20NLTK%20%7C%20Seaborn-ff69b4)](https://github.com/)
 
-![Project Banner](https://github.com/LatiefDataVisionary/sentiment-analysis-text-processing-bisa-ai/blob/main/reports/Gemini_Generated_Image_54vyi954vyi954vy.png)
+![Project Banner](https://github.com/LatiefDataVisionary/sentiment-analysis-text-processing-bisa-ai/blob/main/reports/Sentiment%20Analysis%20Pipeline%20with%20Foundational%20NLP%20Banner.png)
 
 This repository contains the final assignment for the **Basic Text Processing** course from **Bisa AI**. It is a comprehensive demonstration of a foundational Natural Language Processing (NLP) pipeline, where raw text data from three distinct sources is meticulously cleaned, processed, and prepared for a sentiment analysis task.
 
